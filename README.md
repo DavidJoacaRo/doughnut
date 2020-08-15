@@ -1,31 +1,30 @@
-# Welcome to NolanBot!
-## It's a bot I made as a meme.
+# Doughnut Bot
+An open-source multi-purpose Discord Bot.
 
-To run the bot, you need to have node.js installed first. If you haven't installed it yet, download it [here](https://nodejs.org/en/download/).
 
-Also you need a bot token. If you haven't created one yet, go to https://discord.com/developers/applications/ and create a new application. Then, go to the "Bot" tab, click on "Add Bot" and copy the token. **KEEP THIS TOKEN PRIVATE!**
+#### Requirements
+- [Node.js](https://nodejs.org/en/) (latest version)
 
-![image](https://i.imgur.com/0Mowj08.png)
+## Setup
+This will help setting up the bot, online and working. Editing and hosting will be needed to do it by yourself.
 
-![image](https://i.imgur.com/noXpW6K.png)
+### Step 1. Go to Discord Developer page, it can be found [here](https://discord.com/developers/applications/).
 
-![image](https://i.imgur.com/Pj6yQO6.png)
+### Step 2. Hit the New Application button. And name it however you like.
 
-# How to install
-1) Open command prompt in the bot's directory and type: `npm install`
-2) Modify the token.js file and change it to your own token
+### Step 3. Hit the Bot category.
 
-# Run the bot
-## Windows
-Simply open the `NolanBot.bat` file.
+### Step 4. Then hit the button saying "Add Bot"
 
-## Linux
-If you're on Linux open the `NolanBot.sh` file to start the bot or type `node .` into the console.
+### Step 5. Copy the token, and paste it in tokenexample.json
 
-# Donations
-You can support me by donating to this Monero address: 43rf5jYqpPfCuJkaTwWrPY2DqbpLuiAMxTQxzdDc4RvyZNmxVxckZTmZeQLUaNypSDB55ARWMkMQ8GTHrXmV7PmG2qs3ZDN
+###### (Didn't understand? Some pictures can be found [here](https://imgur.com/a/WQtLliY))
 
-# Credits
-This project is owned by lambdaguy101.
-Thanks to DavidJoacaRo for helping.
-Code was cleaned up and organized by Im_Verum.
+
+## Making the bot online.
+
+### Easily go to your bot's local directory, open CMD and make sure the path is on your bot and type `npm install`
+
+
+
+###### Credit goes to @lambdagit101 for letting me fork their project.
