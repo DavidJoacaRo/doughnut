@@ -18,7 +18,7 @@ This will help setting up the bot, online and working. Editing and hosting will 
 
 ### Step 5. Copy the token, and paste it in tokenexample.json
 
-###### (Didn't understand? Some pictures can be found [here](https://imgur.com/a/WQtLliY)
+###### (Didn't understand? Some pictures can be found [here](https://imgur.com/a/WQtLliY))
 
 
 ## Making the bot online.
