@@ -1,2 +1,2 @@
 # Doughnut Bot
-An open-source multi purpose Discord Bot.
+Discontinued files will be added on this branch.
