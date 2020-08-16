@@ -67,133 +67,63 @@ client.on('message', message => {
 		});  
 	}
 
-    if (message.content.toLowerCase().startsWith(`${PREFIX}kick`)) {
-    const user = message.mentions.users.first();
-    if (user) {
-        const member = message.guild.member(user);
-        if (member) {
-        member.kick('Kick was requested')
-            .then(() => {
-                const kickembed = new MessageEmbed()
-                    .setTitle('Moderation')
-                    .setColor(0xff0000)
-                    .setDescription(`${user.tag} was successfully kicked!`);
-                message.channel.send(kickembed);
-            })
-            .catch(err => {
-                const cantkickembed = new MessageEmbed()
-                    .setTitle('Moderation')
-                    .setColor(0xff0000)
-                    .setDescription("Couldn't kick the user");
-                message.channel.send(cantkickembed);
-                console.error(err);
-            });
-        } else {
-            const nomemembed = new MessageEmbed()
-            	.setTitle('Moderation')
-                .setColor(0xff0000)
-                .setDescription('This user is not in this server');
-            message.channel.send(nomemembed);
-        }
-    } else {
-        const nopersembed = new MessageEmbed()
-            .setTitle('Moderation')
-            .setColor(0xff0000)
-            .setDescription('No person was specified!');
-        message.channel.send(nopersembed);
-    }
-}
 	
-if (message.content.toLowerCase().startsWith(`${PREFIX}ban`)) {
-    const user = message.mentions.users.first();
-    if (user) {
-        const member = message.guild.member(user);
-        if (member) {
-            member
-                .ban({
-                    reason: 'Ban was requested',
-                })
-            .then(() => {
-                const banembed = new MessageEmbed()
-                    .setTitle('Moderation')
-                    .setColor(0xff0000)
-                    .setDescription(`${user.tag} was successfully banned!`);
-                message.channel.send(banembed);
-            })
-            .catch(err => {
-                const cantbanembed = new MessageEmbed()
-                    .setTitle('Moderation')
-                    .setColor(0xff0000)
-                    .setDescription("Couldn't ban the user");
-                message.channel.send(cantbanembed);
-                if (err) console.error(err);
-            });
-        } else {
-            const nobanembed = new MessageEmbed()
-                .setTitle('Moderation')
-                .setColor(0xff0000)
-                .setDescription("This user is not in this server");
-			message.channel.send(nobanembed);
+	if (message.content.toLowerCase().startsWith(`${PREFIX}gta 4 pager`)) {
+    	console.log("GTA 4 Pager!");
+    	message.channel.send("https://youtu.be/Ee4ATNFER_Y");
+	}
+
+	if (message.content.toLowerCase().startsWith(`${PREFIX}nolan`)) {
+		console.log("Nolanized");
+		message.channel.send('Nolan').then(sentMessage => {
+			sentMessage.delete({timeout:35000});
+		});
+	}
+
+	if (message.content.toLowerCase().startsWith(`${PREFIX}help music`)) {
+		console.log("Music helped");
+		message.channel.send("well um... not yet\ncuz i dont have a site lol?");
+	}
+		
+	if (message.content.toLowerCase() == `${PREFIX}help`) {
+		console.log("General helped");
+		message.channel.send("well um... not yet\ncuz i dont have a site lol?");
+	}
+		
+	if (message.content.toLowerCase().startsWith(`${PREFIX}bonk`)) {
+		console.log("Hey can somebody keep track of my heads batted in? BONK");
+		message.channel.send('https://cdn.discordapp.com/attachments/686015484281225241/722533493435007066/posterbonk.png');
+	}
+
+	if (message.content.toLowerCase().startsWith(`${PREFIX}invite`)) {
+		console.log("Invited link");
+		message.channel.send('Invite link for Doughnut is: https://discord.com/api/oauth2/authorize?client_id=462952932388896768&permissions=8&scope=bot');
+	}
+
+	if (message.content.toLowerCase().startsWith(`${PREFIX}taskkill`)) {
+		if(message.author.id === "320985090022965258") { // PLEASE MAKE SURE FOR THE GOD'S SAKE YOU EDITED THE ID BEFORE YOU SAY IT DOSEN'T WORK
+			console.log("haha, bot go bye-bye");
+			message.react('👋'); 
+			client.destroy();
+		} else {
+			return message.channel.send(`**Bot owner only**`);
+	}}
+
+	if (message.content.toLowerCase() === (`${PREFIX}donate`)) {
+		console.log("Hope they donate");
+		const donatembed = new MessageEmbed()
+			.setTitle('Support The Doughnut Project')
+			.setColor('BLUE')
+			.setDescription('Well um, I guess you can support me by PayPal, Here is a link:\nhttps://www.paypal.com/paypalme/davidgabriel01\nBy donating you support The Doughnut Project, thanks mate.');
+		message.channel.send(donatembed);
+	}
+
+	if (message.content.toLowerCase() === (`${PREFIX}credits`)) {
+		console.log("Made by lambdaguy101 and DavidJoacARo");
+			const creditsembed = new MessageEmbed()
+				.setTitle('Credits')
+				.setColor('RANDOM')
+				.setDescription('Made by David.#7648 using discord.js. Thanks to lambdagit101 for letting me use their project.');
+			message.channel.send(creditsembed);
 		}
-	}
-}
-	
-if (message.content.toLowerCase().startsWith(`${PREFIX}gta 4 pager`)) {
-    console.log("GTA 4 Pager!");
-    message.channel.send("https://youtu.be/Ee4ATNFER_Y");
-}
-
-if (message.content.toLowerCase().startsWith(`${PREFIX}nolan`)) {
-    console.log("Nolanized");
-    message.channel.send('Nolan').then(sentMessage => {
-		sentMessage.delete({timeout:35000});
-	});
-}
-
-if (message.content.toLowerCase().startsWith(`${PREFIX}help music`)) {
-	console.log("Music helped");
-	message.channel.send("well um... not yet\ncuz i dont have a site lol?");
-}
-	
-if (message.content.toLowerCase() == `${PREFIX}help`) {
-	console.log("General helped");
-	message.channel.send("well um... not yet\ncuz i dont have a site lol?");
-}
-	
-if (message.content.toLowerCase().startsWith(`${PREFIX}bonk`)) {
-	console.log("Hey can somebody keep track of my heads batted in? BONK");
-	message.channel.send('https://cdn.discordapp.com/attachments/686015484281225241/722533493435007066/posterbonk.png');
-}
-
-if (message.content.toLowerCase().startsWith(`${PREFIX}invite`)) {
-	console.log("Invited link");
-	message.channel.send('Invite link for Doughnut is: https://discord.com/api/oauth2/authorize?client_id=462952932388896768&permissions=8&scope=bot');
-}
-
-if (message.content.toLowerCase().startsWith(`${PREFIX}taskkill`)) {
-	if(message.author.id === "320985090022965258") { // PLEASE MAKE SURE FOR THE GOD'S SAKE YOU EDITED THE ID BEFORE YOU SAY IT DOSEN'T WORK
-		console.log("haha, bot go bye-bye");
-		message.react('👋'); 
-		client.destroy();
-	  } else {
-		return message.channel.send(`**Bot owner only**`);
-}}
-
-if (message.content.toLowerCase() === (`${PREFIX}donate`)) {
-	console.log("Hope they donate");
-	const donatembed = new MessageEmbed()
-		.setTitle('Support The Doughnut Project')
-		.setColor('BLUE')
-		.setDescription('Well um, I guess you can support me by PayPal, Here is a link:\nhttps://www.paypal.com/paypalme/davidgabriel01\nBy donating you support The Doughnut Project, thanks mate.');
-	message.channel.send(donatembed);
-}
-
-if (message.content.toLowerCase() === (`${PREFIX}credits`)) {
-	console.log("Made by lambdaguy101 and DavidJoacARo");
-		const creditsembed = new MessageEmbed()
-			.setTitle('Credits')
-			.setColor('RANDOM')
-			.setDescription('Made by David.#7648 using discord.js. Thanks to lambdagit101 for letting me use their project.');
-		message.channel.send(creditsembed);
-	}
 });
