@@ -171,7 +171,7 @@ if (message.content.toLowerCase().startsWith(`${PREFIX}invite`)) {
 }
 
 if (message.content.toLowerCase().startsWith(`${PREFIX}taskkill`)) {
-	if(message.author.id === "320985090022965258") {
+	if(message.author.id === "320985090022965258") { // PLEASE MAKE SURE FOR THE GOD'S SAKE YOU EDITED THE ID BEFORE YOU SAY IT DOSEN'T WORK
 		console.log("haha, bot go bye-bye");
 		message.react('👋'); 
 		client.destroy();
