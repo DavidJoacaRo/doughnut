@@ -25,8 +25,8 @@ client.on('message', message => {
 			message.channel.send(url);
 		});  
 	}
-	if (message.content.toLowerCase().startsWith(`${PREFIX}dankmeme`)) {
-		randomPuppy('dankmemes').then(url => {
+	if (message.content.toLowerCase().startsWith(`${PREFIX}meme`)) {
+		randomPuppy('memes').then(url => {
 			message.channel.send(url);
 		});  
 	}
@@ -40,8 +40,7 @@ client.on('message', message => {
 		message.channel.send(message.author.displayAvatarURL());	
 	}
 	if (message.content.toLowerCase().startsWith(`${PREFIX}github`)) {
-		message.channel.send("This is the source code for NolanBot.");
-		message.channel.send("https://github.com/lambdagit101/nolanbot/");	
+		message.channel.send("");	
 	}
 	if (message.content.toLowerCase().startsWith(`${PREFIX}evaxephon`)) {
 		message.channel.send("https://yandere-simulator.com/tampon.png");	
@@ -141,13 +140,12 @@ if (message.content.toLowerCase().startsWith(`${PREFIX}nolan`)) {
 
 if (message.content.toLowerCase().startsWith(`${PREFIX}help music`)) {
 	console.log("Music helped");
-	message.channel.send("https://cdn.discordapp.com/attachments/722508329678798881/741004511035916368/Help.png");
+	message.channel.send("well um... not yet\ncuz i dont have a site lol?");
 }
 	
 if (message.content.toLowerCase() == `${PREFIX}help`) {
 	console.log("General helped");
-	message.channel.send("https://lambdagit101.github.io/nolanbotweb/help.html");
-	message.channel.send("https://cdn.discordapp.com/attachments/722508329678798881/741004886841229402/Help.png");
+	message.channel.send("well um... not yet\ncuz i dont have a site lol?");
 }
 	
 if (message.content.toLowerCase().startsWith(`${PREFIX}bonk`)) {
@@ -157,7 +155,7 @@ if (message.content.toLowerCase().startsWith(`${PREFIX}bonk`)) {
 
 if (message.content.toLowerCase().startsWith(`${PREFIX}invite`)) {
 	console.log("Invited link");
-	message.channel.send('Invite link for NolanBot is: https://discord.com/api/oauth2/authorize?client_id=722490368003670028&permissions=8&redirect_uri=https%3A%2F%2Flambdagit101.github.io%2Fnolanbotweb%2Fthankyou.html&scope=bot');
+	message.channel.send('Invite link for Doughnut is: https://discord.com/api/oauth2/authorize?client_id=462952932388896768&permissions=8&scope=bot');
 }
 if (message.content.toLowerCase() === (`${PREFIX}donate`)) {
 	console.log("Hope they donate");
@@ -173,7 +171,7 @@ if (message.content.toLowerCase() === (`${PREFIX}credits`)) {
 		const creditsembed = new MessageEmbed()
 			.setTitle('NolanBot')
 			.setColor(0xff0000)
-			.setDescription('Made by @lambdaguy101#1433 using discord.js. Type /github for the source code');
+			.setDescription('Made by David.#7648 using discord.js. Th');
 		message.channel.send(creditsembed);
 	}
 });
