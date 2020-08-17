@@ -1,7 +1,7 @@
 const { client, PREFIX } = require('../index'); // Import client from index.js
 const { MessageEmbed } = require('discord.js');
 const randomPuppy = require('random-puppy');
-const lib = require("reddit-package")
+const rapi = require('imageapi.js');
 
 client.on('message', message => {
     if (message.author.bot) return;
@@ -31,7 +31,7 @@ client.on('message', message => {
 	}
 
 	if (message.content.toLowerCase().startsWith(`${PREFIX}meme`)) {
-		randomPuppy('memes').then(url => {
+		let data = lib.reddit('meme')
 			message.channel.send(url);
 		});  
 	}
@@ -119,7 +119,7 @@ client.on('message', message => {
 	}
 
 	if (message.content.toLowerCase() === (`${PREFIX}credits`)) {
-		console.log("Made by lambdaguy101 and DavidJoacARo");
+		console.log("Made by lambdaguy101 and DavidJoacaRo");
 			const creditsembed = new MessageEmbed()
 				.setTitle('Credits')
 				.setColor('RANDOM')
