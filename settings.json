@@ -1,3 +1,4 @@
 {
-  "PREFIX": "dn!"
+  "PREFIX": "dn!",
+  "version": "1.0.0b"
 }
