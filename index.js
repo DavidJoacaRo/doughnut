@@ -4,7 +4,7 @@ const ytdl = require('ytdl-core');
 const settings = require("./settings.json");
 
 // Export the client so other modules can use it too
-client.PREFIX = settings.PREFIX;
+let PREFIX = settings.PREFIX;
 module.exports.client = client;
 module.exports.PREFIX = PREFIX;
 
