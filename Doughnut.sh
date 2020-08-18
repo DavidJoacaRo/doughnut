@@ -1,3 +1,3 @@
 #!/bin/bash
-echo "Launching Nolan"
+echo "Launching Doughmut"
 node index.js
