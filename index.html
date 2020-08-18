@@ -7,11 +7,52 @@
       Home | Doughnut
     </title>
   </head>
+  <style>
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+}
+.memepanel >.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url('dankmeme.png') bottom right 15% no-repeat #46B6AC;
+}
+.musicplaypanel >.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url('dnplay.png') bottom right 15% no-repeat #46B6AC;
+}
+</style>
   <body>
     <center>
     <img src="doughnut.png" alt="Doughnut Logo" style="width:648px;height:200px;">
     <br>
     <br>
-If you would like to help me do this site wich I never worked with this, you can visit my GitHub on the Doughnut repostory.
-  </body>
+      <h5>
+Home Page.
+      </h5>
+      <br>
+      <br>
+      <div id="memepanel" class="demo-card-square mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text">Memes</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Doughnut can send random memes from subreddits such as r/dankmemes and r/Animemes
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+  </div>
+</div>
+      <br>
+      <div id="musicpanel" class="demo-card-square mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text">Music</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Doughnut can play music and videos from YouTube in your channel with ease
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+  </div>
+</div>
+        </body>
 </html>
