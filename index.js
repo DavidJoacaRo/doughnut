@@ -7,8 +7,10 @@ const settings = require("./settings.json");
 
 // Export the client so other modules can use it too
 let PREFIX = settings.PREFIX;
+let version = settings.version
 module.exports.client = client;
 module.exports.PREFIX = PREFIX;
+module.exports.version = version;
 
 client.on('ready', () => {
     console.log(`${client.user.tag} - Ready on ${client.guilds.cache.size} guild${client.guilds.cache.size != 1 ? 's' : ''}!`);
