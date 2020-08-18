@@ -126,21 +126,4 @@ client.on('message', message => {
 			.setDescription('Made by David.#7648 using discord.js. Thanks to lambdagit101 for letting me use their project.');
 			message.channel.send(creditsembed);
 		}
-
-		
-	if (message.content.toLowerCase() === (`${PREFIX}botinfo`)) {
-
-		Math.round(client.ping)
-		const bicon = client.user.displayAvatarURL
-		const binfoe = new MessageEmbed();
-		const bname = client.user.username
-		.setColor('RANDOM')
-		.setThumbnail(bicon)
-		.addField("📰 Bot Name", `${bname}`, true)
-		.addField("📡 Bot Ping", bot.ping + " ms", true)
-		.addField("➕ Created By", "David.#7643", true)
-		.addField("📝 Current State", "~~PRE-ALPHA~~\nALPHA\n~~BETA~~\n~~STABLE~~", true)
-		.setFooter("Running on v" + version)
-		 message.channel.send(binfoe);
-		}
 });
