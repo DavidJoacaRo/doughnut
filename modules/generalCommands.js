@@ -31,9 +31,9 @@ client.on('message', message => {
 	}
 
 	if (message.content.toLowerCase().startsWith(`${PREFIX}meme`)) {
-		
-			message.channel.send(fetched);
-		
+		randomPuppy('dankmeme').then(url => {
+			message.channel.send(url);
+		})
 	};
 
 	if (message.content.toLowerCase().startsWith(`${PREFIX}4chan`)) {
