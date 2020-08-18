@@ -9,7 +9,7 @@ client.on('message', message => {
             if (user) {
                 const member = message.guild.member(user);
                 if (member) {
-                    member.kick('Kick was requested')
+                    //member.kick('Kick was requested')
                     .then(() => {
                         const kickembed = new Discord.MessageEmbed()
                             .setTitle('Moderation')
@@ -27,7 +27,7 @@ client.on('message', message => {
                         message.channel.send(cantkickembed);
                         console.error(err);
                     });
-                } 
+                }
 
                 //You can't kick someone who isn't in the server!
                 else {
@@ -57,7 +57,7 @@ client.on('message', message => {
             if (user) {
                 const member = message.guild.member(user);
                 if (member) {
-                    member.ban({reason: 'Ban was requested'})
+                    //member.ban({reason: 'Ban was requested'})
                     .then(() => {
                         const banembed = new Discord.MessageEmbed()
                             .setTitle('Moderation')
