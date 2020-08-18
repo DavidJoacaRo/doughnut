@@ -130,7 +130,7 @@ client.on('message', message => {
 		
 	if (message.content.toLowerCase() === (`${PREFIX}botinfo`)) {
 
-		Math.round(bot.ping)
+		Math.round(client.ping)
 		const bicon = client.user.displayAvatarURL
 		const binfoe = new MessageEmbed();
 		const bname = client.user.username
