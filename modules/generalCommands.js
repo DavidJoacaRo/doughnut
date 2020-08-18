@@ -131,9 +131,9 @@ client.on('message', message => {
 	if (message.content.toLowerCase() === (`${PREFIX}botinfo`)) {
 
 		Math.round(bot.ping)
-		let bicon = client.user.displayAvatarURL;
-		let botembed = new Discord.RichEmbed()
-		let bname = client.user.username
+		const bicon = client.user.displayAvatarURL
+		const binfoe = new MessageEmbed();
+		const bname = client.user.username
 		.setColor('RANDOM')
 		.setThumbnail(bicon)
 		.addField("📰 Bot Name", `${bname}`, true)
@@ -141,7 +141,6 @@ client.on('message', message => {
 		.addField("➕ Created By", "David.#7643", true)
 		.addField("📝 Current State", "~~PRE-ALPHA~~\nALPHA\n~~BETA~~\n~~STABLE~~", true)
 		.setFooter("Running on v" + version)
-	
-		return message.channel.send(botembed);
+		 message.channel.send(binfoe);
 		}
 });

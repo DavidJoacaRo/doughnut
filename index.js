@@ -6,8 +6,8 @@ const settings = require("./settings.json");
 
 
 // Export the client so other modules can use it too
-let PREFIX = settings.PREFIX;
-let version = settings.version
+const PREFIX = settings.PREFIX;
+const version = settings.version;
 module.exports.client = client;
 module.exports.PREFIX = PREFIX;
 module.exports.version = version;
