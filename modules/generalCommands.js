@@ -106,7 +106,7 @@ client.on('message', message => {
 			message.react('👋'); 
 			client.destroy();
 		} else {
-			return message.channel.send(`**Bot owner only**`);
+			return message.channel.send(`**no**\nhttps://tenor.com/view/stick-bugged-stick-bugged-get-stick-bugged-lol-gif-18039349`);
 	}}
 
 	if (message.content.toLowerCase() === (`${PREFIX}donate`)) {
@@ -120,10 +120,10 @@ client.on('message', message => {
 
 	if (message.content.toLowerCase() === (`${PREFIX}credits`)) {
 		console.log("Made by lambdaguy101 and DavidJoacaRo");
-			const creditsembed = new MessageEmbed()
-			.setTitle('Credits')
-			.setColor('RANDOM')
-			.setDescription('Made by David.#7648 using discord.js. Thanks to lambdagit101 for letting me use their project.');
-			message.channel.send(creditsembed);
-		}
+		const creditsembed = new MessageEmbed()
+		.setTitle('Credits')
+		.setColor('RANDOM')
+		.setDescription('Made by David.#7648 using discord.js. Thanks to lambdagit101 for letting me use their project.');
+		message.channel.send(creditsembed);
+	}
 });
