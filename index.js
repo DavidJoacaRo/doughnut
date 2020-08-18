@@ -2,6 +2,8 @@ const { Client, MessageEmbed } = require('discord.js');
 const client = new Client();
 const ytdl = require('ytdl-core');
 const settings = require("./settings.json");
+//Looking for prefix? Check settings.json
+
 
 // Export the client so other modules can use it too
 let PREFIX = settings.PREFIX;
@@ -25,6 +27,10 @@ client.on('ready', () => {
         }
     });
 });
+
+
+
+//Idk client stuff
 
 client.once("reconnecting", () => {
     console.log("Reconnecting.");

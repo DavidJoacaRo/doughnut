@@ -112,18 +112,36 @@ client.on('message', message => {
 	if (message.content.toLowerCase() === (`${PREFIX}donate`)) {
 		console.log("Hope they donate");
 		const donatembed = new MessageEmbed()
-			.setTitle('Support The Doughnut Project')
-			.setColor('BLUE')
-			.setDescription('Well um, I guess you can support me by PayPal, Here is a link:\nhttps://www.paypal.com/paypalme/davidgabriel01\nBy donating you support The Doughnut Project, thanks mate.');
+		.setTitle('Support The Doughnut Project')
+		.setColor('BLUE')
+		.setDescription('Well um, I guess you can support me by PayPal, Here is a link:\nhttps://www.paypal.com/paypalme/davidgabriel01\nBy donating you support The Doughnut Project, thanks mate.');
 		message.channel.send(donatembed);
 	}
 
 	if (message.content.toLowerCase() === (`${PREFIX}credits`)) {
 		console.log("Made by lambdaguy101 and DavidJoacaRo");
 			const creditsembed = new MessageEmbed()
-				.setTitle('Credits')
-				.setColor('RANDOM')
-				.setDescription('Made by David.#7648 using discord.js. Thanks to lambdagit101 for letting me use their project.');
+			.setTitle('Credits')
+			.setColor('RANDOM')
+			.setDescription('Made by David.#7648 using discord.js. Thanks to lambdagit101 for letting me use their project.');
 			message.channel.send(creditsembed);
+		}
+
+		
+	if (message.content.toLowerCase() === (`${PREFIX}botinfo`)) {
+
+		Math.round(bot.ping)
+		let bicon = client.user.displayAvatarURL;
+		let botembed = new Discord.RichEmbed()
+		let bname = client.user.username
+		.setColor('RANDOM')
+		.setThumbnail(bicon)
+		.addField("📰 Bot Name", `${bname}`, true)
+		.addField("📡 Bot Ping", bot.ping + " ms", true)
+		.addField("➕ Created By", "David.#7643", true)
+		.addField("📝 Current State", "~~PRE-ALPHA~~\nALPHA\n~~BETA~~\n~~STABLE~~", true)
+		.setFooter("Running on v" + version)
+	
+		return message.channel.send(botembed);
 		}
 });
