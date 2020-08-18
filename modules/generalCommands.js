@@ -31,10 +31,10 @@ client.on('message', message => {
 	}
 
 	if (message.content.toLowerCase().startsWith(`${PREFIX}meme`)) {
-		let data = lib.reddit('meme')
-			message.channel.send(url);
-		});  
-	}
+		
+			message.channel.send(fetched);
+		
+	};
 
 	if (message.content.toLowerCase().startsWith(`${PREFIX}4chan`)) {
 		randomPuppy('greentext').then(url => {
@@ -48,7 +48,7 @@ client.on('message', message => {
 	}
 
 	if (message.content.toLowerCase().startsWith(`${PREFIX}github`)) {
-		message.channel.send("");	
+		message.channel.send("https://github.com/DavidJoacaRo/doughnut");	
 	}
 
 	if (message.content.toLowerCase().startsWith(`${PREFIX}evaxephon`)) {
