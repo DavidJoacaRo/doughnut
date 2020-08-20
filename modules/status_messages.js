@@ -9,10 +9,10 @@ setInterval(() => {
     const guildCount = client.guilds.cache.size;
 
     const statusMessages = [
-        { type: 'WATCHING', name: `coronavirus cases | dn!help`},
-        { type: 'WATCHING', name: `${guildCount} Servers | dn!help`},
-        { type: 'LISTENING', name: `${userCount} Users | dn!help`},
-        { type: 'WATCHING', name: 'for pull requests | dn!help'}
+        { type: 'WATCHING', name: `coronavirus cases | ${PREFIX}help`},
+        { type: 'WATCHING', name: `${guildCount} Servers | ${PREFIX}help`},
+        { type: 'LISTENING', name: `${userCount} Users | ${PREFIX}help`},
+        { type: 'WATCHING', name: `for pull requests | ${PREFIX}help`}
     ]
 
     client.user.setActivity(statusMessages[index]);
