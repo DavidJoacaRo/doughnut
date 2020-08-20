@@ -1,4 +1,4 @@
-const client = require('../index').client;
+const { client, PREFIX } = require('../index');
 const intervalInMS = 15000;
 
 let index = 0;
