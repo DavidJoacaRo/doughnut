@@ -1,1 +1,33 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-amber.min.css" />
+    <link rel="stylesheet" href="main.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <title>
+      Commands | Doughnut
+    </title>
+  </head>
 
+  
+
+  <body>
+    <center>
+      <br>
+      <br>
+      <!-- Colored FAB button with ripple -->
+      <button onclick="location.href = 'https://davidjoacaro.github.io/doughnut/';" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+        <i class="material-icons">home</i>
+      </button>
+      <br>
+      <br>
+      <br>
+      <h1 style="color: white">Doughnut Commands Page</h1>
+      <br>
+      <h4 style="color: white">General</h4>
+      <h6 style="color: white">dn!help - Redirects you to this page.</h6>
+      <h6 style="color: white">dn!help music - Redirects you to this page. (again)</h6>
+      <br>
+      <br>
+        </body>
+</html>
