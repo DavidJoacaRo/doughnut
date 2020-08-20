@@ -51,10 +51,6 @@ client.on('message', message => {
 		message.channel.send("https://github.com/DavidJoacaRo/doughnut");	
 	}
 
-	if (message.content.toLowerCase().startsWith(`${PREFIX}evaxephon`)) {
-		message.channel.send("https://yandere-simulator.com/tampon.png");	
-	}
-
 	if (message.content.toLowerCase().startsWith(`${PREFIX}puppy`)) {
 		randomPuppy().then(url => {
 			message.channel.send(url);
@@ -82,12 +78,12 @@ client.on('message', message => {
 
 	if (message.content.toLowerCase().startsWith(`${PREFIX}help music`)) {
 		console.log("Music helped");
-		message.channel.send("well um... not yet\ncuz i dont have a site lol?");
+		message.channel.send("https://davidjoacaro.github.io/doughnut/help/");
 	}
 		
 	if (message.content.toLowerCase() == `${PREFIX}help`) {
 		console.log("General helped");
-		message.channel.send("well um... not yet\ncuz i dont have a site lol?");
+		message.channel.send("https://davidjoacaro.github.io/doughnut/help/");
 	}
 		
 	if (message.content.toLowerCase().startsWith(`${PREFIX}bonk`)) {
