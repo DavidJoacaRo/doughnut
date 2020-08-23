@@ -78,12 +78,12 @@ client.on('message', message => {
 
 	if (message.content.toLowerCase().startsWith(`${PREFIX}help music`)) {
 		console.log("Music helped");
-		message.channel.send("https://davidjoacaro.github.io/doughnut/help/");
+		message.channel.send("https://davidjoacaro.github.io/doughnut/help");
 	}
 		
 	if (message.content.toLowerCase() == `${PREFIX}help`) {
 		console.log("General helped");
-		message.channel.send("https://davidjoacaro.github.io/doughnut/help/");
+		message.channel.send("https://davidjoacaro.github.io/doughnut/help");
 	}
 		
 	if (message.content.toLowerCase().startsWith(`${PREFIX}bonk`)) {
