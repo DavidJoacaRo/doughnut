@@ -102,7 +102,7 @@ client.on('message', message => {
 			message.react('👋'); 
 			client.destroy();
 		} else {
-			return message.channel.send(`**no**\nhttps://tenor.com/view/stick-bugged-stick-bugged-get-stick-bugged-lol-gif-18039349`);
+			return message.channel.send(`**looks like you aren't the bot owner, get stick bugged lol?**\nhttps://tenor.com/view/stick-bugged-stick-bugged-get-stick-bugged-lol-gif-18039349`);
 	}}
 
 	if (message.content.toLowerCase() === (`${PREFIX}donate`)) {
@@ -121,5 +121,10 @@ client.on('message', message => {
 		.setColor('RANDOM')
 		.setDescription('Made by David.#7648 using discord.js. Thanks to lambdagit101 for letting me use their project.');
 		message.channel.send(creditsembed);
+	}
+
+	if (message.content.toLowerCase().startsWith(`nigga`)) {
+		console.log("someone is being racist");
+		message.channel.send("ey, don't be racist!");
 	}
 });
