@@ -123,8 +123,4 @@ client.on('message', message => {
 		message.channel.send(creditsembed);
 	}
 
-	if (message.content.toLowerCase().startsWith(`nigga`)) {
-		console.log("someone is being racist");
-		message.channel.send("ey, don't be racist!");
-	}
 });
