@@ -1,23 +1,38 @@
 const { client, PREFIX } = require('../index'); // Import the client from index.js
-const { MessageEmbed } = require('discord.js');
+const Discord = require('discord.js');
 const ytdl = require('ytdl-core');
 const queue = new Map();
 // This part of code was made by Gabriel Tanner, not me!
 client.on("message", async (message) => {
+
     if (message.author.bot) return;
+    if (!message.guild) return;
     if (!message.content.startsWith(PREFIX)) return;
 
     const serverQueue = queue.get(message.guild.id);
 
-    if (message.content.startsWith(`${PREFIX}play`)) {
+
+    if (message.content.toLowerCase().startsWith(`${PREFIX}play`)) {
         execute(message, serverQueue);
         return;
-    } else if (message.content.startsWith(`${PREFIX}skip`)) {
+    } else if (message.content.toLowerCase().startsWith(`${PREFIX}skip`)) {
         skip(message, serverQueue);
         return;
-    } else if (message.content.startsWith(`${PREFIX}stop`)) {
+    } else if (message.content.toLowerCase().startsWith(`${PREFIX}stop`)) {
         stop(message, serverQueue);
         return;
+    }
+    else if (message.content.toLowerCase().startsWith(`${PREFIX}queue`)) {
+        //logMapElements(, , serverQueue); 
+        queueue(message, serverQueue);
+        return;
+    }
+    if (message.content.toLowerCase().startsWith(`${PREFIX}join`)) {
+        if (message.member.voice.channel) {
+          const connection = await message.member.voice.channel.join();
+        } else {
+          message.channel.send("You need to be in a voice channel to perform this action!");
+        }
     }
 });
 
@@ -63,27 +78,48 @@ async function execute(message, serverQueue) {
         }
     } else {
         serverQueue.songs.push(song);
-        const embed = new MessageEmbed()
-            .setTitle("YouTube")
-            .setColor(0xff0000)
+        const embed = new Discord.MessageEmbed()
+            .setTitle("Music")
+            .setColor('2f3136')
             .setDescription(`**${song.title}** was added to the queue.`);
         return message.channel.send(embed);
     }
 }
+function logMapElements(value) {
+    console.log(`m${value}`);
+  }
+async function queueue(message, serverQueue) {
+    try {
+        const queuembed = new Discord.MessageEmbed()
+            .setTitle(message.guild.name + " Queue")
+            .setColor('2f3136')
+            .setDescription('Now playing: ' + serverQueue.get('title') + "\n")
+            .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
+        message.channel.send(queuembed);
+    } catch (error) {
+        console.log(error);
+        const noqueuembed = new Discord.MessageEmbed()
+            .setTitle(message.guild.name + " Queue")
+            .setColor('2f3136')
+            .setDescription("The queue is empty!")
+            .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL()); // /.setDescription(JSON.stringify(serverQueue.songs).title.join('\n'))
+        message.channel.send(noqueuembed);
+    }
+}
 
-function skip(message, serverQueue) {
+async function skip(message, serverQueue) {
     if (!message.member.voice.channel) return message.channel.send("You have to be in a voice channel to stop the music!");
     if (!serverQueue) return message.channel.send("There is no song that I can skip!");
     serverQueue.connection.dispatcher.end();
 }
 
-function stop(message, serverQueue) {
+async function stop(message, serverQueue) {
     if (!message.member.voice.channel) return message.channel.send("You have to be in a voice channel to stop the music!");
     serverQueue.songs = [];
     serverQueue.connection.dispatcher.end();
 }
 
-function play(guild, song) {
+async function play(guild, song) {
     const serverQueue = queue.get(guild.id);
     if (!song) {
         serverQueue.voiceChannel.leave();
@@ -100,9 +136,9 @@ function play(guild, song) {
         .on("error", (error) => console.error(error));
 
     dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-    const embed2 = new MessageEmbed()
-        .setTitle("YouTube")
-        .setColor(0xff0000)
+    const embed2 = new Discord.MessageEmbed()
+        .setTitle("Music")
+        .setColor('2f3136')
         .setDescription(`Started playing: **${song.title}**`);
     serverQueue.textChannel.send(embed2);
 }
