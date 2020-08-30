@@ -88,12 +88,12 @@ client.on('message', message => {
 		
 	if (message.content.toLowerCase().startsWith(`${PREFIX}bonk`)) {
 		console.log("Hey can somebody keep track of my heads batted in? BONK");
-		message.channel.send('https://cdn.discordapp.com/attachments/686015484281225241/722533493435007066/posterbonk.png');
+		message.channel.send('https://cdn.discordapp.com/attachments/686015484281225241/722533493435007066/posterbonk.png'); //haha, b o n k 
 	}
 
 	if (message.content.toLowerCase().startsWith(`${PREFIX}invite`)) {
 		console.log("Invited link");
-		message.channel.send('Invite link for Doughnut is: https://discord.com/api/oauth2/authorize?client_id=462952932388896768&permissions=8&scope=bot');
+		message.channel.send('Invite link for Doughnut is: https://discord.com/api/oauth2/authorize?client_id=462952932388896768&permissions=8&scope=bot'); //Change your invite here
 	}
 
 	if (message.content.toLowerCase().startsWith(`${PREFIX}taskkill`)) {
@@ -102,7 +102,7 @@ client.on('message', message => {
 			message.react('👋'); 
 			client.destroy();
 		} else {
-			return message.channel.send(`**looks like you aren't the bot owner, get stick bugged lol?**\nhttps://tenor.com/view/stick-bugged-stick-bugged-get-stick-bugged-lol-gif-18039349`);
+			return message.channel.send(`**looks like you aren't the bot owner, get stick bugged lol?**\nhttps://tenor.com/view/stick-bugged-stick-bugged-get-stick-bugged-lol-gif-18039349`); //lmao yes
 	}}
 
 	if (message.content.toLowerCase() === (`${PREFIX}donate`)) {
@@ -110,7 +110,8 @@ client.on('message', message => {
 		const donatembed = new MessageEmbed()
 		.setTitle('Support The Doughnut Project')
 		.setColor('BLUE')
-		.setDescription('Well um, I guess you can support me by PayPal, Here is a link:\nhttps://www.paypal.com/paypalme/davidgabriel01\nBy donating you support The Doughnut Project, thanks mate.');
+		.setDescription('\nhttps://www.paypal.com/paypalme/davidgabriel01\n') //Change the link to your paypal or bitcoin or etc etc etc
+		.setFooter('*No additional things will be added to the bot like premium thing or something, w	e are all equal.')
 		message.channel.send(donatembed);
 	}
 
@@ -119,7 +120,7 @@ client.on('message', message => {
 		const creditsembed = new MessageEmbed()
 		.setTitle('Credits')
 		.setColor('RANDOM')
-		.setDescription('Made by David.#7648 using discord.js. Thanks to lambdagit101 for letting me use their project.');
+		.setDescription('Made by David.#7648 using discord.js. Thanks to lambdagit101 for letting me use their project.'); //Edit your credits here
 		message.channel.send(creditsembed);
 	}
 
