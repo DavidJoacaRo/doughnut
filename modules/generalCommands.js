@@ -6,76 +6,9 @@ const rapi = require('imageapi.js');
 client.on('message', message => {
     if (message.author.bot) return;
     if (!message.guild) return;
-	if (message.content.toLowerCase().startsWith(`${PREFIX}sbubby`)) {
-		randomPuppy('sbubby').then(url => {
-			message.channel.send(url);
-		});  
-	}
-
-	if (message.content.toLowerCase().startsWith(`${PREFIX}animeme`)) {
-		randomPuppy('Animemes').then(url => {
-			message.channel.send(url);
-		});  
-	}
-
-	if (message.content.toLowerCase().startsWith(`${PREFIX}pic`)) {
-		randomPuppy('pics').then(url => {
-			message.channel.send(url);
-		});  
-	}
-
-	if (message.content.toLowerCase().startsWith(`${PREFIX}comedyheaven`)) {
-		randomPuppy('comedyheaven').then(url => {
-			message.channel.send(url);
-		});  
-	}
-
-	if (message.content.toLowerCase().startsWith(`${PREFIX}meme`)) {
-		randomPuppy('dankmeme').then(url => {
-			message.channel.send(url);
-		})
-	};
-
-	if (message.content.toLowerCase().startsWith(`${PREFIX}4chan`)) {
-		randomPuppy('greentext').then(url => {
-			message.channel.send(url);
-		});  
-	}
-
-	if (message.content.toLowerCase().startsWith(`${PREFIX}requestavatar`)) {
-		message.channel.send("Here is your avatar!");
-		message.channel.send(message.author.displayAvatarURL());	
-	}
-
 	if (message.content.toLowerCase().startsWith(`${PREFIX}github`)) {
 		message.channel.send("https://github.com/DavidJoacaRo/doughnut");	
 	}
-
-	if (message.content.toLowerCase().startsWith(`${PREFIX}puppy`)) {
-		randomPuppy().then(url => {
-			message.channel.send(url);
-		});  
-	}
-
-	if (message.content.toLowerCase().startsWith(`${PREFIX}aww`)) {
-		randomPuppy('aww').then(url => {
-			message.channel.send(url);
-		});  
-	}
-
-	
-	if (message.content.toLowerCase().startsWith(`${PREFIX}gta 4 pager`)) {
-    	console.log("GTA 4 Pager!");
-    	message.channel.send("https://youtu.be/Ee4ATNFER_Y"); //hmm
-	}
-
-	if (message.content.toLowerCase().startsWith(`${PREFIX}nolan`)) {
-		console.log("Nolanized");
-		message.channel.send('Nolan').then(sentMessage => {
-			sentMessage.delete({timeout:35000});
-		}); //get nolanized
-	}
-
 	if (message.content.toLowerCase().startsWith(`${PREFIX}help music`)) {
 		console.log("Music helped");
 		message.channel.send("https://davidjoacaro.github.io/doughnut/help"); //help
@@ -84,11 +17,6 @@ client.on('message', message => {
 	if (message.content.toLowerCase() == `${PREFIX}help`) {
 		console.log("General helped");
 		message.channel.send("https://davidjoacaro.github.io/doughnut/help");
-	}
-		
-	if (message.content.toLowerCase().startsWith(`${PREFIX}bonk`)) {
-		console.log("Hey can somebody keep track of my heads batted in? BONK");
-		message.channel.send('https://cdn.discordapp.com/attachments/686015484281225241/722533493435007066/posterbonk.png'); //haha, b o n k 
 	}
 
 	if (message.content.toLowerCase().startsWith(`${PREFIX}invite`)) {
