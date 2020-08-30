@@ -66,19 +66,19 @@ client.on('message', message => {
 	
 	if (message.content.toLowerCase().startsWith(`${PREFIX}gta 4 pager`)) {
     	console.log("GTA 4 Pager!");
-    	message.channel.send("https://youtu.be/Ee4ATNFER_Y");
+    	message.channel.send("https://youtu.be/Ee4ATNFER_Y"); //hmm
 	}
 
 	if (message.content.toLowerCase().startsWith(`${PREFIX}nolan`)) {
 		console.log("Nolanized");
 		message.channel.send('Nolan').then(sentMessage => {
 			sentMessage.delete({timeout:35000});
-		});
+		}); //get nolanized
 	}
 
 	if (message.content.toLowerCase().startsWith(`${PREFIX}help music`)) {
 		console.log("Music helped");
-		message.channel.send("https://davidjoacaro.github.io/doughnut/help");
+		message.channel.send("https://davidjoacaro.github.io/doughnut/help"); //help
 	}
 		
 	if (message.content.toLowerCase() == `${PREFIX}help`) {
