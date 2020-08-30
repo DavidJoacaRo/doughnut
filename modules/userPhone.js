@@ -25,10 +25,10 @@ client.on('message', async (message) => {
             if (element.channelId == message.channel.id) {
                 sessions.splice(i, 1);
                 if(element.peer != null){
-                    client.channels.cache.get(element.peer).send('Connection closed by the other side.');
+                    client.channels.cache.get(element.peer).send('<:offline:714058981055922186> **The other connection hung up the userphone**');
                     sessions.removeIf(function callBack(item, indexer){return item.peer == message.channel.id;})
                 }
-                message.channel.send('Connection closed.');
+                message.channel.send('<:offline:714058981055922186> **You hung up the phone. Connection closed.**');
                 //stop session
                 exit = true;
                 return;
@@ -41,13 +41,13 @@ client.on('message', async (message) => {
             sessions[sessions.length - 1].peer = message.channel.id;
             newItem = new UserPhoneSession(message.channel.id);
             newItem.peer = sessions[sessions.length - 1].channelId;
-            client.channels.cache.get(newItem.peer).send('Connection started. Say hello!');
-            client.channels.cache.get(newItem.channelId).send('Connection started. Say hello!');
+            client.channels.cache.get(newItem.peer).send('<:online:714058981231820820> **Connection started. Say hello!**');
+            client.channels.cache.get(newItem.channelId).send('<:online:714058981231820820> **Connection started. Say hello!**');
             sessions.push(newItem);
         }
         else if (sessions.length == 0 || sessions.length % 2) {
             // add a session
-            message.channel.send('Waiting for a connection...');
+            message.channel.send('<:kalm:730876771381280808> **Searching for a connection...**');
             console.log("added session");
             newItem = new UserPhoneSession(message.channel.id);
             sessions.push(newItem);
