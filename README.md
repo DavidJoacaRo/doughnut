@@ -1,5 +1,5 @@
-# Doughnut Bot
-An open-source multi-purpose Discord Bot.
+# Doughnut Bot ![Discord Server](https://img.shields.io/discord/745311967950143558?color=%237289DA) ![Open Issues](https://img.shields.io/github/issues/DavidJoacaRo/doughnut) ![Closed Issues](https://img.shields.io/github/issues-closed/DavidJoacaRo/doughnut) ![License](https://img.shields.io/github/license/DavidJoacaRo/doughnut)
+An open-source multi-purpose Discord Bot. 
 
 
 #### Requirements
