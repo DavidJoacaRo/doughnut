@@ -27,4 +27,4 @@ This will help setting up the bot, online and working. Editing and hosting will 
 
 
 
-###### Credit goes to @lambdagit101 for letting me fork their project.
+###### Credit goes to @lambdagit101 for letting me download their project.
