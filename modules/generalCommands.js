@@ -1,53 +1,114 @@
+const Discord = require('discord.js');
 const { client, PREFIX } = require('../index'); // Import client from index.js
-const { MessageEmbed } = require('discord.js');
 
-client.on('message', message => {
+client.on('message', async (message) => 
+{
     if (message.author.bot) return;
-    if (!message.guild) return;
-	if (message.content.toLowerCase().startsWith(`${PREFIX}github`)) {
-		message.channel.send("https://github.com/DavidJoacaRo/doughnut");	
-	}
-	if (message.content.toLowerCase().startsWith(`${PREFIX}help music`)) {
-		console.log("Music helped");
-		message.channel.send("https://davidjoacaro.github.io/doughnut/help"); //help
-	}
-		
-	if (message.content.toLowerCase() == `${PREFIX}help`) {
-		console.log("General helped");
-		message.channel.send("https://davidjoacaro.github.io/doughnut/help");
-	}
+	
+	if (message.content.toLowerCase().startsWith(`${PREFIX}github`)) 
+	{
+        message.channel.send('Wanna help fixing bugs or make new features? The repository can be found here: https://github.com/DavidJoacaRo/doughnut');	
+        return;
+    }
 
-	if (message.content.toLowerCase().startsWith(`${PREFIX}invite`)) {
-		console.log("Invited link");
-		message.channel.send('Invite link for Doughnut is: https://discord.com/api/oauth2/authorize?client_id=462952932388896768&permissions=8&scope=bot'); //Change your invite here
-	}
+    if (message.content.toLowerCase().startsWith(`${PREFIX}heartbeat`) || message.content.toLowerCase().startsWith(`${PREFIX}ping`)) {
+        console.log("Checking ping...");
+        message.channel.send("Pinging...").then(m => {
+            var ping = m.createdTimestamp - message.createdTimestamp;
+            var botPing = Math.round(client.pi);
 
-	if (message.content.toLowerCase().startsWith(`${PREFIX}taskkill`)) {
-		if(message.author.id === "320985090022965258") { // PLEASE MAKE SURE FOR THE GOD'S SAKE YOU EDITED THE ID BEFORE YOU SAY IT DOSEN'T WORK
-			console.log("haha, bot go bye-bye");
-			message.react('👋'); 
-			client.destroy();
-		} else {
-			return message.channel.send(`**looks like you aren't the bot owner, get stick bugged lol?**\nhttps://tenor.com/view/stick-bugged-stick-bugged-get-stick-bugged-lol-gif-18039349`); //lmao yes
-	}}
+            m.edit('Bot ping is: ' + `${ping}ms`);
+        });
+        return;
+    }
+	
+    if (message.content.toLowerCase().startsWith(`${PREFIX}gta 4 pager`)) 
+    {
+        console.log("GTA 4 Pager!");
+        message.channel.send("https://youtu.be/Ee4ATNFER_Y");
+        return;
+    }
 
-	if (message.content.toLowerCase() === (`${PREFIX}donate`)) {
-		console.log("Hope they donate");
-		const donatembed = new MessageEmbed()
-		.setTitle('Support The Doughnut Project')
-		.setColor('BLUE')
-		.setDescription('\nhttps://www.paypal.com/paypalme/davidgabriel01\n') //Change the link to your paypal or bitcoin or etc etc etc
-		.setFooter('*No additional things will be added to the bot like premium thing or something, w	e are all equal.')
-		message.channel.send(donatembed);
-	}
+    if (message.content.toLowerCase().startsWith(`${PREFIX}print`)) {
+        const args = message.content.slice(PREFIX.length).trim().split(' ');
+        const chanel = await getUserFromMention(args[1]);
+        const text = message.content.split(args[1] + " ")[1];
+        try {
+            if (chanel.permissionsFor(message.author).has('SEND_MESSAGES')) {
+                chanel.send(text);
+                message.delete();
+                return;
+            }
+        } catch (err) {
+            const chanel = args[1];
+            if (text == null) {
+                message.delete();
+                message.channel.send(chanel);
+                return;
+            } else {
+                message.delete();
+                message.channel.send(chanel + " " + text);
+                return;
+            }
+        }
+    }
 
-	if (message.content.toLowerCase() === (`${PREFIX}credits`)) {
-		console.log("Made by lambdaguy101 and DavidJoacaRo");
-		const creditsembed = new MessageEmbed()
-		.setTitle('Credits')
-		.setColor('RANDOM')
-		.setDescription('Made by David.#7648 using discord.js. Thanks to lambdagit101 for letting me use their project.'); //Edit your credits here
-		message.channel.send(creditsembed);
-	}
+    if (message.content.toLowerCase().startsWith(`${PREFIX}nolan`)) 
+    {
+        message.channel.send('Nolan');
+        return;
+    }
 
+    if (message.content.toLowerCase() == `${PREFIX}help`) 
+    {
+	    message.channel.send("A list of commands can be found here: https://davidjoacaro.github.io/doughnut/help/");
+        return;
+    }
+
+    if (message.content.toLowerCase().startsWith(`${PREFIX}support`)) {
+        message.channel.send('Having trouble or found bugs? Report them here: https://discord.com/invite/ty6B3r');
+        return;
+    }
+
+    if (message.content.toLowerCase().startsWith(`${PREFIX}invite`)) 
+    {
+        message.channel.send('https://discord.com/oauth2/authorize?client_id=462952932388896768&permissions=8&scope=bot')
+        return;
+    }
+
+
+    if (message.content.toLowerCase() === (`${PREFIX}donate`)) 
+    {
+        const donatembed = new Discord.MessageEmbed()
+            .setTitle('Donate')
+            .setDescription('Donate method: ' + require('../config.json').donatelink)
+            .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
+        message.channel.send(donatembed);
+        return;
+    }
+	
+//The man, the myth, the legend.	
+    if (message.content.toLowerCase() === (`${PREFIX}credits`)) 
+    {
+        const creditsembed = new Discord.MessageEmbed()
+        .setTitle('Bot Credits')
+        .setDescription('DavidJoacaRo - Creator\nlambdagit101 - Helping me with the website, and fixing bugs.')
+        .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
+        message.channel.send(creditsembed);
+        return;
+    }
 });
+
+async function getUserFromMention(mention) {
+    if (!mention) return;
+
+    if (mention.startsWith('<#') && mention.endsWith('>')) {
+        mention = mention.slice(2, -1);
+
+        if (mention.startsWith('!')) {
+            mention = mention.slice(1);
+        }
+        console.log(mention);
+        return await client.channels.cache.get(mention);
+    }
+}

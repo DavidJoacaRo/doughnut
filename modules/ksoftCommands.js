@@ -88,7 +88,7 @@ client.on('message', async (message) =>
             .setTitle(embedtitle)
             .setURL(embedtitleurl)
             .setImage(imageurl)
-            .setFooter(`Invoked by ${message.author.username}, thanks to KSoft.Si for providing this amazing API.`, message.author.avatarURL());
+            .setFooter(`Invoked by ${message.author.username}, thanks to KSoft.Si for providing this amazing API.   `, message.author.avatarURL());
         message.channel.send(wikiembed);
         return;
     }
