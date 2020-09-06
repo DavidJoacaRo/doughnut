@@ -1,7 +1,5 @@
 const { client, PREFIX } = require('../index'); // Import client from index.js
 const { MessageEmbed } = require('discord.js');
-const randomPuppy = require('random-puppy');
-const rapi = require('imageapi.js');
 
 client.on('message', message => {
     if (message.author.bot) return;
