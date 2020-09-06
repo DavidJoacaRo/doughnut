@@ -43,7 +43,7 @@ client.once("disconnect", () => {
 });
 
 // Log in to discord
-client.login(process.env.BOT_TOKEN || require('./token.json').token)
+client.login(process.env.TOKEN || require('./token.json').token)
 .catch(e => {
 	console.log('----- Login failed. Reason: -----');
 	console.error(e);
