@@ -23,7 +23,7 @@ This will help setting up the bot, online and working. Editing and hosting will 
 
 ## Making the bot online.
 
-### Easily go to your bot's local directory, open CMD and make sure the path is on your bot and type `npm install`
+### Easily go to your bot's local directory, open CMD and make sure the path is on your bot and type `npm install` then `node index.js`
 
 
 
