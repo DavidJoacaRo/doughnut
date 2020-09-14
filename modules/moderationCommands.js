@@ -180,7 +180,7 @@ client.on('message', async (message) => {
 
         //Muting a member.
         if (message.content.toLowerCase().startsWith(`${PREFIX}mute`)) {
-            return message.channel.send('Muting does not work right now, we are working on it though.');
+            return message.channel.send('Muting does not work right now, plz help.');
             // Honestly, who tf thought <member>.mute works
 
             //Muting a member (V2)

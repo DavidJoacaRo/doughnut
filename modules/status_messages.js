@@ -14,7 +14,7 @@ setInterval(() => {
         { type: 'LISTENING', name: `${userCount} Users | ${PREFIX}help`},
         { type: 'WATCHING', name: `for pull requests | ${PREFIX}help`},
         { type: 'WATCHING', name: `for changes on the repository | ${PREFIX}help`},
-        { type: 'WATCHING', name: `Anime | ${PREFIX}help`}
+        { type: 'WATCHING', name: `the repository | ${PREFIX}help`}
     ]
 
     client.user.setActivity(statusMessages[index]);

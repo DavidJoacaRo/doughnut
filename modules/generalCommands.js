@@ -65,6 +65,12 @@ client.on('message', async (message) =>
         return;
     }
 
+    if (message.content.toLowerCase() == `${PREFIX}help music`) 
+    {
+	    message.channel.send("A list of commands can be found here: https://davidjoacaro.github.io/doughnut/help/ (again)");
+        return;
+    }
+
     if (message.content.toLowerCase().startsWith(`${PREFIX}support`)) {
         message.channel.send('Having trouble or found bugs? Report them here: https://discord.com/invite/ty6B3r');
         return;

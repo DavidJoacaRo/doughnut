@@ -24,7 +24,7 @@ client.on('message', async (message) =>
         return;
     }
 
-    if (message.content.toLowerCase().startsWith(`${PREFIX}dankmeme`)) {
+    if (message.content.toLowerCase().startsWith(`${PREFIX}meme`)) {
         fetchredditi('https://api.ksoft.si/images/random-meme', message);
         return;
     }
@@ -88,7 +88,7 @@ client.on('message', async (message) =>
             .setTitle(embedtitle)
             .setURL(embedtitleurl)
             .setImage(imageurl)
-            .setFooter(`Invoked by ${message.author.username}, thanks to KSoft.Si for providing this amazing API.   `, message.author.avatarURL());
+            .setFooter(`Invoked by ${message.author.username}, API Provided by KSoft.si `, message.author.avatarURL());
         message.channel.send(wikiembed);
         return;
     }
@@ -110,7 +110,7 @@ client.on('message', async (message) =>
                 { name: 'Song Name', value: lyricsjson.data[0].name, inline: true },
             )
             .setDescription(lyricsjson.data[0].lyrics)
-            .setFooter(`Invoked by ${message.author.username}, thanks to KSoft.Si for providing this amazing API.`, message.author.avatarURL());
+            .setFooter(`Invoked by ${message.author.username}, API Provided by KSoft.si`, message.author.avatarURL());
         message.channel.send(lyricsembed);
     }
 	
@@ -129,6 +129,6 @@ async function fetchredditi(link, message) {
         .setURL(detailsjson.source)
         .setImage(imageurl)
         .setColor(`RANDOM`)
-        .setFooter(`Invoked by ${message.author.username}, thanks to KSoft.Si for providing this amazing API.`, message.author.avatarURL());
+        .setFooter(`Invoked by ${message.author.username}, API Provided by KSoft.si`, message.author.avatarURL());
     message.channel.send(redditembed);
 }
