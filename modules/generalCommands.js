@@ -97,7 +97,7 @@ client.on('message', async (message) =>
     {
         const donatembed = new Discord.MessageEmbed()
             .setTitle('Support the Doughnut Project')
-            .setDescription('You can support me on [PayPal](https://paypal.me/davidgabriel01)')
+            .setDescription('You can support me on PayPal -> https://paypal.me/davidgabriel01')
             .setColor('BLUE')
         message.channel.send(donatembed);
         return;
