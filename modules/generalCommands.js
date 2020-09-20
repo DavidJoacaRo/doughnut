@@ -39,7 +39,7 @@ client.on('message', async (message) =>
 	
     if (message.content.toLowerCase().startsWith(`${PREFIX}gta 4 pager`)) 
     {
-        console.log("GTA 4 Pager!");
+        console.log("GTA 4 Pager r !");
         message.channel.send("https://youtu.be/Ee4ATNFER_Y");
         return;
     }
