@@ -59,6 +59,16 @@ client.on('message', async (message) =>
         return;
     }
 
+    if (message.content.toLowerCase().startsWith(`${PREFIX}taskkill`)) 
+    {
+        if(message.author.id === "320985090022965258") {
+          console.log("Sleeping mode activated, goodbye!")
+          bot.destroy()
+        } else {
+          return message.channel.send(`fam u aren't the bot owner`);
+        }
+    }
+
     if (message.content.toLowerCase() == `${PREFIX}help`) 
     {
 	    message.channel.send("A list of commands can be found here: https://davidjoacaro.github.io/doughnut/help/");
