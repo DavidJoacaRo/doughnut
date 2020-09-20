@@ -82,7 +82,7 @@ client.on('message', async (message) =>
     }
 
     if (message.content.toLowerCase().startsWith(`${PREFIX}support`)) {
-        message.channel.send('Having trouble or found bugs? Report them here:(https://discord.gg/dTMYdtN)');
+        message.channel.send('Having trouble or found bugs? Report them here -> https://discord.gg/dTMYdtN');
         return;
     }
 
