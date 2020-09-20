@@ -82,7 +82,7 @@ client.on('message', async (message) =>
     }
 
     if (message.content.toLowerCase().startsWith(`${PREFIX}support`)) {
-        message.channel.send('Having trouble or found bugs? Report them here: https://discord.com/invite/ty6B3r');
+        message.channel.send('Having trouble or found bugs? Report them here:(https://discord.gg/dTMYdtN)');
         return;
     }
 
@@ -97,7 +97,7 @@ client.on('message', async (message) =>
     {
         const donatembed = new Discord.MessageEmbed()
             .setTitle('Support the Doughnut Project')
-            .setDescription('You can support me on PayPal: paypal.me/davidgabriel01')
+            .setDescription('You can support me on [PayPal](paypal.me/davidgabriel01)')
             .setColor('BLUE')
         message.channel.send(donatembed);
         return;
