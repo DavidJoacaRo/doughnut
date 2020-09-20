@@ -96,9 +96,9 @@ client.on('message', async (message) =>
     if (message.content.toLowerCase() === (`${PREFIX}donate`)) 
     {
         const donatembed = new Discord.MessageEmbed()
-            .setTitle('Donate')
-            .setDescription('Donate method: ' + require('../config.json').donatelink)
-            .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
+            .setTitle('Support the Doughnut Project')
+            .setDescription('You can support me on PayPal: paypal.me/davidgabriel01')
+            .setColor('BLUE')
         message.channel.send(donatembed);
         return;
     }
