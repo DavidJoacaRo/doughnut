@@ -26,7 +26,7 @@ client.on('message', async (message) =>
         return;
     }
 
-    if (message.content.toLowerCase().startsWith(`${PREFIX}requestavatar`) || message.content.toLowerCase().startsWith(`${PREFIX}ra`)) 
+    if (message.content.toLowerCase().startsWith(`${PREFIX}avatar`) || message.content.toLowerCase().startsWith(`${PREFIX}a`)) 
     {
         const user = message.mentions.users.first();
         if (user) {
