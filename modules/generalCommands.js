@@ -11,21 +11,6 @@ client.on('message', async (message) =>
         return;
     }
 
-    if (message.content.toLowerCase().startsWith(`${PREFIX}console`) || message.content.toLowerCase().startsWith(`${PREFIX}con`)) {
-        if (message.author.id === "320985090022965258") {
-            const args = message.content.slice(PREFIX.length).trim().split(' ');
-            const text = message.content.split(args[1] + " ")[1];
-            try {
-                eval(text); 
-            } catch (err) {
-                message.channel.send(`JavaScript error occured: ${err}`);
-            }
-        } else {
-            message.channel.send(`Only <@${require('../config.json').creatorUserID}> can use this command`);
-        }
-        return;
-    }
-
     if (message.content.toLowerCase().startsWith(`${PREFIX}heartbeat`) || message.content.toLowerCase().startsWith(`${PREFIX}ping`)) {
         console.log("Checking ping...");
         message.channel.send("Pinging...").then(m => {
@@ -39,7 +24,7 @@ client.on('message', async (message) =>
 	
     if (message.content.toLowerCase().startsWith(`${PREFIX}gta 4 pager`)) 
     {
-        console.log("GTA 4 Pager r !");
+        console.log("GTA 4 Pager!");
         message.channel.send("https://youtu.be/Ee4ATNFER_Y");
         return;
     }

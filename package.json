@@ -6,10 +6,8 @@
   "dependencies": {
     "@discordjs/opus": "^0.3.2",
     "discord.js": "^12.3.0",
+    "discord-music-system": "^3.0.31",
     "ffmpeg-static": "^4.2.6",
-    "imageapi.js": "^1.0.10",
-    "random-puppy": "^1.1.0",
-    "reddit-package": "^1.0.0",
     "youtube-info": "^1.3.2",
     "ytdl-core-discord": "^1.2.1"
   },
