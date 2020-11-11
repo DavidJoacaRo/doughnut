@@ -13,12 +13,13 @@ module.exports.run = async (client, message, args) => {
                             .then(() => {
                                 const bannedembed = new Discord.MessageEmbed()
                                     .setTitle('Moderation')
-									.setColor("BLURPLE")
+									.setColor("RED")
                                     .setDescription(`You have been banned by ${message.author.tag} from ${message.guild.name}. Reason: ${text}`)
                                     .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
                                 user.send(bannedembed);
                                 const banembed = new Discord.MessageEmbed()
                                 .setTitle('Moderation')
+                                .setColor("LIME")
                                 .setDescription(`${user.tag} was successfully banned!`)
                                 .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
                                 message.channel.send(banembed);
