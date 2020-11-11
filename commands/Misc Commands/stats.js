@@ -9,8 +9,8 @@ module.exports.run = async (client, message, args) => {
 		.addFields(
 			{ name: 'Total guilds', value: client.guilds.cache.size, inline: true },
 			{ name: 'Total users', value: client.users.cache.size, inline: true },
-			{ name: 'Prefix', value: 'jb/', inline: true },
-			{ name: 'Help page', value: '[Click here](https://juicebotdocs.shitpost.business/)' }
+			{ name: 'Prefix', value: 'dn!', inline: true },
+			{ name: 'Help page', value: '[Click here](https://davidjoacaro.github.io/doughnut/)' }
 		)
         .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
     message.channel.send(hembed);
