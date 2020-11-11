@@ -13,13 +13,13 @@ module.exports.run = async (client, message, args) => {
                             .then(() => {
                                 const kickedembed = new Discord.MessageEmbed()
                                     .setTitle('Moderation')
-									.setColor("BLURPLE")
+									.setColor("RED")
                                     .setDescription(`You have been kicked by ${message.author.tag} from ${message.guild.name}. Reason: ${text}`)
                                     .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
                                 user.send(kickedembed);
                                 const kickembed = new Discord.MessageEmbed()
                                     .setTitle('Moderation')
-									.setColor("BLURPLE")
+									.setColor("LIME")
                                     .setDescription(`${user.tag} was successfully kicked!`)
                                     .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
                                 message.channel.send(kickembed);

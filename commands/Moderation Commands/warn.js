@@ -12,20 +12,20 @@ module.exports.run = async (client, message, args) => {
                         const warnembed = new Discord.MessageEmbed()
                             .setTitle('Moderation')
                             .setDescription(`You have been warned\nReason: ${reason}`)
-							.setColor("BLURPLE")
+							.setColor("ORANGE")
                             .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
                         memberiq.send(warnembed);
                         const warnedembed = new Discord.MessageEmbed()
                             .setTitle('Moderation')
                             .setDescription(`${user.tag} has been warned`)
-							.setColor("BLURPLE")
+							.setColor("LIME")
                             .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
                         message.channel.send(warnedembed);
                     } else {
                         const warnemmbed = new Discord.MessageEmbed()
                             .setTitle('Moderation')
                             .setDescription(`No permission`)
-							.setColor("BLURPLE")
+							.setColor("RED")
                             .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
                         message.channel.send(warnemmbed);
                     }
