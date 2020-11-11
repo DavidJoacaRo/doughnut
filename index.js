@@ -1,51 +1,120 @@
-const { Client, MessageEmbed } = require('discord.js');
-const client = new Client();
-const ytdl = require('ytdl-core');
-const settings = require("./settings.json");
-//Looking for prefix? Check settings.json
+require("dotenv").config();
+const Discord = require("discord.js");
+const client = new Discord.Client();
+const { prefix } = require("./settings.json");
+const fs = require("fs");
+client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
 
 
-// Export the client so other modules can use it too
-const PREFIX = settings.PREFIX;
-const version = settings.version;
-module.exports.client = client;
-module.exports.PREFIX = PREFIX;
-module.exports.version = version;
+/**
+try {
+	require('./musicCommands.js');
+	require('./status_messages.js');
+} catch (err) {
+	console.log(err);
+}
+**/
 
-client.on('ready', () => {
-    console.log(`${client.user.tag} - Ready on ${client.guilds.cache.size} guild${client.guilds.cache.size != 1 ? 's' : ''}!`);
+fs.readdir(`${__dirname}/commands`, (error, ctg) => {
+    if (error) throw error;
 
-    // Execute modules in /modules folder
-    const fs = require('fs');
-    let files = fs.readdirSync('./modules');
-    files.forEach(file => {
-        if (file.endsWith('.js')) {
-            try {
-                console.log('Running module: ' + file);
-                require('./modules/' + file);
-            } catch (e) {
-                console.log(`Module ${file} has crashed: ${e}`);
-            }
-        }
+    ctg.forEach(category => {
+
+        fs.readdir(`${__dirname}/commands/${category}`, (err, commands) => {
+            if (err) throw err;
+
+            commands.forEach(command => {
+                const cmd = require(`${__dirname}/commands/${category}/${command}`);
+                if (!cmd.help) throw new Error(`Invalid command file structure ${command}!`);
+
+                cmd.help.category = category;
+                cmd.location = `${__dirname}/commands/${category}/${command}`;
+
+                console.log(`Loading command ${command}...`);
+
+                client.commands.set(cmd.help.name, cmd);
+                if (cmd.help.aliases && Array.isArray(cmd.help.aliases)) cmd.help.aliases.forEach(alias => client.aliases.set(alias, cmd.help.name));
+            });
+        });
     });
 });
 
+client.on("ready", () => {
+    console.log("Bot is online!");
+});
+client.on("warn", console.warn);
+client.on("error", console.error);
 
+/**
 
-//Idk client stuff
-
-client.once("reconnecting", () => {
-    console.log("Reconnecting.");
+const bot = new MusicBot({
+    botPrefix: prefix,
+    ytApiKey: process.env.YT_APIKEY,
+    botClient: client
 });
 
-client.once("disconnect", () => {
-    console.log("Disconnected. Client will no longer attempt to reconnect.");
+client.on("message", async (message) => {
+
+    if (message.author.bot) return;
+    if (!message.guild) return;
+    if (!message.content.startsWith(prefix)) return;
+
+    if (message.content.toLowerCase().startsWith(`${prefix}`)) {
+        bot.onMessage(message);
+    }
 });
 
-// Log in to discord
-client.login(process.env.TOKEN || require('./token.json').token)
-.catch(e => {
-	console.log('----- Login failed. Reason: -----');
-	console.error(e);
-	process.exit(1); // Exit process with an error code
+**/
+
+client.on("message", async (message) => {
+    if (message.author.bot) return;
+    if (message.content.indexOf(prefix) !== 0) return;
+
+    const args = message.content.slice(prefix.length).trim().split(" ");
+    const cmd = args.shift().toLowerCase();
+    const command = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
+
+    if (!command) return;
+
+    try {
+        await command.run(client, message, args);
+    } catch(e) {
+        console.error(e);
+        message.channel.send(`Something went wrong while executing command "**${command}**": ${e}`);
+    }
 });
+
+// below are the status messages
+
+const intervalInMS = 15000;
+
+let index = 0;
+
+setInterval(() => {
+
+    const userCount = client.users.cache.size;
+    const guildCount = client.guilds.cache.size;
+
+    const statusMessages = [
+        
+        { type: 'WATCHING', name: `the repository | ${prefix}help`},
+        { type: 'WATCHING', name: `${guildCount} Servers | ${prefix}help`},
+        { type: 'LISTENING', name: `${userCount} Users | ${prefix}help`},
+        { type: 'PLAYING', name: `Rocket League | ${prefix}help`},
+        { type: 'PLAYING', name: `Genshin Impact | ${prefix}help`},
+        { type: 'WATCHING', name: `for pull requests | ${prefix}help`},
+         //I couldn't resist the urge.
+        // Does this last one work? I've commented it out as a safe feature.
+        // { type: 'PLAYING', name: `the Matrix | /help'}
+    ]
+
+    client.user.setActivity(statusMessages[index]);
+    index += 1;
+    if (index == statusMessages.length) index = 0;
+}, intervalInMS);
+
+// above are the status messages
+
+
+client.login(process.env.BOT_TOKEN);
