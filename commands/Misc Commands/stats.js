@@ -4,8 +4,8 @@ const { prefix, botname, gitlink, creator } = require('../../config.json');
 module.exports.run = async (client, message, args) => {
     const hembed = new Discord.MessageEmbed()
         .setTitle(`${botname} stats`)
-		.setColor("BLURPLE")
-		.setThumbnail('https://cdn.discordapp.com/emojis/773794480134160395.png')
+		.setColor("#F2CA82")
+		.setThumbnail('https://cdn.discordapp.com/attachments/775608245200879639/776098777622642688/new_logo.png')
 		.addFields(
 			{ name: 'Total guilds', value: client.guilds.cache.size, inline: true },
 			{ name: 'Total users', value: client.users.cache.size, inline: true },
