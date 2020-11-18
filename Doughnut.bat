@@ -2,5 +2,5 @@
 color 6
 title Doughnut
 echo Launching Doughnut...
-node index.js
+nodemon index.js
 pause
