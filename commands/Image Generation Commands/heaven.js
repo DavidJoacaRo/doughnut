@@ -4,7 +4,7 @@ module.exports.run = async (client, message, args) => {
     const user = message.mentions.users.first() || message.author;
 		const heavenembed = new Discord.MessageEmbed()
 			.setTitle(`${user.username} has risen`)
-			.setColor("BLURPLE")
+			.setColor("YELLOW")
 			.setImage(`https://vacefron.nl/api/heaven?user=${user.displayAvatarURL({ format: 'png', size: 512 })}`)
 			.setFooter(`Invoked by ${message.author.username}, provided by vacefron.nl`, message.author.avatarURL());
 			message.channel.send(heavenembed);
