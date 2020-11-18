@@ -41,7 +41,17 @@ fs.readdir(`${__dirname}/commands`, (error, ctg) => {
 });
 
 client.on("ready", () => {
-    console.log("Bot is online!");
+		console.log("")
+	  console.log("")
+		console.log("------------------------------------")
+		console.log("")
+		console.log("              SUCCESS!")
+    console.log("");
+		console.log("           Bot is online!")
+		console.log("")
+		console.log("------------------------------------")
+		console.log("")
+		console.log("")
 });
 client.on("warn", console.warn);
 client.on("error", console.error);
@@ -97,7 +107,7 @@ setInterval(() => {
     const guildCount = client.guilds.cache.size;
 
     const statusMessages = [
-        
+
         { type: 'WATCHING', name: `the repository | ${prefix}help`},
         { type: 'WATCHING', name: `${guildCount} Servers | ${prefix}help`},
         { type: 'LISTENING', name: `${userCount} Users | ${prefix}help`},
