@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
         var embedtitleurl = await deetailsjson.article_url;
         const wikiembed = new Discord.MessageEmbed()
             .setTitle(embedtitle)
-			.setColor("BLURPLE")
+			      .setColor("WHITE")
             .setURL(embedtitleurl)
             .setImage(imageurl)
             .setFooter(`Invoked by ${message.author.username}, provided by KSoft.Si`, message.author.avatarURL());
