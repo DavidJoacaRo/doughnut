@@ -64,33 +64,22 @@ client.on("error", console.error);
 */
 
 client.on("message", async (message) => {
-
     if (message.author.bot) return;
-    if (!message.guild) return;
-    if (!message.content.startsWith(prefix)) return;
-
-    if (message.content.toLowerCase().startsWith(`${prefix}`)) {
-        client.onMessage(message);
-    }
-});
 
 
-client.on("message", async (message) => {
-    if (message.author.bot) return;
-    if (message.content.indexOf(prefix) !== 0) return;
+      if (message.content.indexOf(prefix) !== 0) return;
 
-    const args = message.content.slice(prefix.length).trim().split(" ");
-    const cmd = args.shift().toLowerCase();
-    const command = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
+      const args = message.content.slice(prefix.length).trim().split(" ");
+      const cmd = args.shift().toLowerCase();
+      const command = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
 
-    if (!command) return;
+      if (!command) return;
 
-    try {
-        await command.run(client, message, args);
-    } catch(e) {
-        console.error(e);
-        message.channel.send(`Something went wrong while executing command "**${command}**": ${e}`);
-    }
+      try {
+          await command.run(client, message, args);
+      } catch(e) {
+          console.error(e);
+      }
 });
 
 // below are the status messages
