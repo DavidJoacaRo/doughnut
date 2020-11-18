@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
                 const avatarembed = new Discord.MessageEmbed()
                     .setTitle('Here is your requested avatar!')
                     .setImage(user.displayAvatarURL({ format: 'png', size: 512 }))
-                    .setColor("BLURPLE")
+                    .setColor("RANDOM")
                     .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
                 message.channel.send(avatarembed);
 };
