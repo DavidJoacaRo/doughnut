@@ -18,4 +18,5 @@ module.exports.run = async (client, message, args) => {
 module.exports.help = {
     name: "rule34",
     description: "Searches the rule 34 website with the tags you specify.",
-    aliases: ['r3
+    aliases: ['r34']
+};
