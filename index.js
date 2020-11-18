@@ -56,8 +56,6 @@ client.on("ready", () => {
 client.on("warn", console.warn);
 client.on("error", console.error);
 
-/**
-
 const bot = new MusicBot({
     botPrefix: prefix,
     ytApiKey: process.env.YT_APIKEY,
@@ -75,7 +73,6 @@ client.on("message", async (message) => {
     }
 });
 
-**/
 
 client.on("message", async (message) => {
     if (message.author.bot) return;
