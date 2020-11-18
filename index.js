@@ -56,11 +56,12 @@ client.on("ready", () => {
 client.on("warn", console.warn);
 client.on("error", console.error);
 
-const bot = new MusicBot({
+/* const bot = new MusicBot({
     botPrefix: prefix,
     ytApiKey: process.env.YT_APIKEY,
     botClient: client
 });
+*/
 
 client.on("message", async (message) => {
 
