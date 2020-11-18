@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
                 } catch (err) {
                     const returnembed = new Discord.MessageEmbed()
                         .setTitle('Moderation')
-						.setColor("BLURPLE")
+						            .setColor("BLURPLE")
                         .setDescription(`Please provide a number`)
                         .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
                     return message.channel.send(returnembed);
@@ -37,7 +37,7 @@ module.exports.run = async (client, message, args) => {
                     .setDescription(`No permission`)
                     .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
                 message.channel.send(nonpermembed);
-            }  
+            }
 };
 
 module.exports.help = {
