@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
             try {
 				const cmmembed = new Discord.MessageEmbed()
 				.setTitle(`Correction.`)
-				.setColor("BLURPLE")
+				.setColor("BLUE")
 				.setImage(`https://api.alexflipnote.dev/didyoumean?top=${args[0].replace(/-/g, '%20')}&bottom=${args[1].replace(/-/g, '%20')}`)
 				.setFooter(`Invoked by ${message.author.username}, provided by api.alexflipnote.dev`, message.author.avatarURL());
 				message.channel.send(cmmembed);
