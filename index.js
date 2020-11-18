@@ -70,7 +70,7 @@ client.on("message", async (message) => {
     if (!message.content.startsWith(prefix)) return;
 
     if (message.content.toLowerCase().startsWith(`${prefix}`)) {
-        bot.onMessage(message);
+        client.onMessage(message);
     }
 });
 
