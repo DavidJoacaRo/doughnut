@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
 			var finalresult = text.join("%20");
             try {
 				const cmmembed = new Discord.MessageEmbed()
-				.setColor("BLURPLE")
+				.setColor("DARK_GRAY")
 				.setTitle(`${message.author.username}, who has gotten this achievement?`)
 				.setImage(`https://api.alexflipnote.dev/achievement?text=${finalresult}`)
 				.setFooter(`Invoked by ${message.author.username}, provided by api.alexflipnote.dev`, message.author.avatarURL());
