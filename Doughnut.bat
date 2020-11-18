@@ -1,6 +1,6 @@
 @echo off
-color 1
-title Doughnut Bot Output
+color 6
+title Doughnut
 echo Launching Doughnut...
 node index.js
 pause
