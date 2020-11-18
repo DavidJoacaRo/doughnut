@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
 
 		const heavenembed = new Discord.MessageEmbed()
 			.setTitle(`${message.author.username} is rich`)
-			.setColor("BLURPLE")
+			.setColor("RED")
 			.setImage(`https://api.alexflipnote.dev/supreme?text=${finalresult}`)
 			.setFooter(`Invoked by ${message.author.username}, provided by api.alexflipnote.dev`, message.author.avatarURL());
 			message.channel.send(heavenembed);
