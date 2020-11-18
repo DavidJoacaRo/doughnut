@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
 			const rule34json = await rule34.json();
 			const r34embed = new Discord.MessageEmbed()
 				.setTitle(`${message.author.username}, here is your requested rule 34`)
-				.setColor("BLURPLE")
+				.setColor("PINK")
 				.setImage(rule34json[Math.floor(Math.random() * rule34json.length)].file_url)
 				.setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
 			message.channel.send(r34embed);
