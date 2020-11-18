@@ -11,18 +11,18 @@ module.exports.run = async (client, message, args) => {
 	const query = querystring.stringify({ term: args.join(' ') });
 
 	const { list } = await fetch(`https://api.urbandictionary.com/v0/define?${query}`).then(response => response.json());
-	
+
 	if (!list.length) {
 		return message.channel.send(`No results found for **${args.join(' ')}**.`);
 	} else {
 		const [answer] = list;
 
 		const embed = new Discord.MessageEmbed()
-			.setColor('BLURPLE')
+			.setColor('BLUE')
 			.setTitle(answer.word)
 			.setURL(answer.permalink)
 			.setFooter(`Invoked by ${message.author.username}, powered by api.urbandictionary.com`, message.author.avatarURL())
-			.setThumbnail('https://cdn.discordapp.com/emojis/773794480134160395.png')
+			.setThumbnail('https://cdn.discordapp.com/attachments/775608245200879639/778661083258159114/unnamedd.png')
 			.addFields(
 				{ name: 'Definition', value: answer.definition },
 				{ name: 'Example', value: answer.example },
