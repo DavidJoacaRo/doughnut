@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
 				.setTitle(`Correction`)
 				.attachFiles({ attachment: link, name: "didyoumean.png" })
 				.setImage(`attachment://didyoumean.png`)
-				.setCOlor('RANDOM')
+				.setColor('RANDOM')
 				.setFooter(`Invoked by ${message.author.username}, provided by api.alexflipnote.dev`, message.author.avatarURL());
 			message.channel.send(cembed);
 		} catch (err) {

@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
 				.setTitle(`${user.username} was obliterated by the Orbital Cannon`)
 				.attachFiles({ attachment: image, name: "wasted.png" })
 				.setImage(`attachment://wasted.png`)
-				.setCOlor('RANDOM')
+				.setColor('RANDOM')
 				.setFooter(`Invoked by ${message.author.username}, provided by Canvacord`, message.author.avatarURL());
 			message.channel.send(magembed);
 		} catch (err) {

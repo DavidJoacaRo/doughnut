@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
 				.setTitle(`Does ${user.username} look like they know what a JPEG is?`)
 				.attachFiles({ attachment: link, name: "jpeg.png" })
 				.setImage(`attachment://jpeg.png`)
-				.setCOlor('RANDOM')
+				.setColor('RANDOM')
 				.setFooter(`Invoked by ${message.author.username}, provided by api.alexflipnote.dev`, message.author.avatarURL());
 			message.channel.send(jpembed);
 		} catch (err) {

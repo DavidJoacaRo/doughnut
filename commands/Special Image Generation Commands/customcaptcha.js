@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
 				.setTitle(`${message.author.username} needs someone to solve this captcha`)
 				.attachFiles({ attachment: link, name: "ccaptcha.png" })
 				.setImage(`attachment://ccaptcha.png`)
-				.setCOlor('RANDOM')
+				.setColor('RANDOM')
 				.setFooter(`Invoked by ${message.author.username}, provided by api.alexflipnote.dev`, message.author.avatarURL());
 			message.channel.send(cembed);
 		} catch (err) {

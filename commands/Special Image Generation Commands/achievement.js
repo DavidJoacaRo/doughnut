@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
 				.setTitle(`Achievement Get!`)
 				.attachFiles({ attachment: link, name: "achievement.png" })
 				.setImage(`attachment://achievement.png`)
-				.setCOlor('RANDOM')
+				.setColor('RANDOM')
 				.setFooter(`Invoked by ${message.author.username}, provided by api.alexflipnote.dev`, message.author.avatarURL());
 			message.channel.send(achembed);
 		} catch (err) {

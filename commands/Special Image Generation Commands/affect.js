@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
 				.setTitle(`That sure affected the baby`)
 				.attachFiles({ attachment: image, name: "affected.png" })
 				.setImage(`attachment://affected.png`)
-				.setCOlor('RANDOM')
+				.setColor('RANDOM')
 				.setFooter(`Invoked by ${message.author.username}, provided by Canvacord`, message.author.avatarURL());
 			message.channel.send(cembed);
 		} catch (err) {

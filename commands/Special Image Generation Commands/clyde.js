@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
 				.setTitle(`Only you can see this message`)
 				.attachFiles({ attachment: image, name: "clyde.png" })
 				.setImage(`attachment://clyde.png`)
-				.setCOlor('RANDOM')
+				.setColor('RANDOM')
 				.setFooter(`Invoked by ${message.author.username}, provided by Canvacord`, message.author.avatarURL());
 			message.channel.send(cembed);
 		} catch (err) {
