@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
 				.setTitle(`Poor ${user.username}`)
 				.attachFiles({ attachment: canvas.toBuffer(), name: "yangrave.png" })
 				.setImage(`attachment://yangrave.png`)
-				.setColor(embedcolor)
+				.setColor('RANDOM')
 				.setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
 			message.channel.send(magembed);
 		} catch (err) {
