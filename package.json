@@ -13,6 +13,7 @@
     "nodemon": "^2.0.6"
   },
   "dependencies": {
+    "alexflipnote.js": "^2.3.1",
     "api.alexflipnote": "^1.0.0",
     "canvacord": "^5.0.8",
     "captcha-canvas": "^2.2.2",
