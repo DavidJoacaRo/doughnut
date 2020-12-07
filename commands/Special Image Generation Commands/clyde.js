@@ -1,12 +1,21 @@
 const Discord = require('discord.js');
 const canvacord = require('canvacord');
-const { prefix } = require('../../config.json');
+const { embedcolor } = require('../../config.json');
 
 module.exports.run = async (client, message, args) => {
-	let messagec = args.join(' ');
-    let image = await canvacord.Canvas.clyde(messagec);
-    let attachment = new Discord.MessageAttachment(image, "clyde.png");
-    return message.channel.send(attachment);
+		try {
+			let image = await canvacord.Canvas.clyde(args.join(' '));
+	    let attachment = new Discord.MessageAttachment(image, "clyde.png");
+			const cembed = new Discord.MessageEmbed()
+				.setTitle(`Only you can see this message`)
+				.attachFiles({ attachment: image, name: "clyde.png" })
+				.setImage(`attachment://clyde.png`)
+				.setCOlor('RANDOM')
+				.setFooter(`Invoked by ${message.author.username}, provided by Canvacord`, message.author.avatarURL());
+			message.channel.send(cembed);
+		} catch (err) {
+			console.log(err);
+	  }
 };
 
 module.exports.help = {

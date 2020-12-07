@@ -1,13 +1,23 @@
 const Discord = require('discord.js');
 const canvacord = require('canvacord');
-const { prefix } = require('../../config.json');
+const { embedcolor } = require('../../config.json');
 
 module.exports.run = async (client, message, args) => {
-	var user = message.mentions.users.first() || message.author;
-    let avatar = user.displayAvatarURL({ dynamic: false, format: 'png' });
-    let image = await canvacord.Canvas.wasted(avatar);
-    let attachment = new Discord.MessageAttachment(image, "wasted.png");
-    return message.channel.send(attachment);
+		try {
+			var user = message.mentions.users.first() || message.author;
+	    let avatar = user.displayAvatarURL({ dynamic: false, format: 'png' });
+	    let image = await canvacord.Canvas.wasted(avatar);
+	    let attachment = new Discord.MessageAttachment(image, "wasted.png");
+			const magembed = new Discord.MessageEmbed()
+				.setTitle(`${user.username} was obliterated by the Orbital Cannon`)
+				.attachFiles({ attachment: image, name: "wasted.png" })
+				.setImage(`attachment://wasted.png`)
+				.setCOlor('RANDOM')
+				.setFooter(`Invoked by ${message.author.username}, provided by Canvacord`, message.author.avatarURL());
+			message.channel.send(magembed);
+		} catch (err) {
+			console.log(err);
+	  }
 };
 
 module.exports.help = {
