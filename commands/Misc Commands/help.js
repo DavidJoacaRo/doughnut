@@ -5,8 +5,8 @@ module.exports.run = async (client, message, args) => {
     const hembed = new Discord.MessageEmbed()
         .setTitle(`Heya, I'm ${botname}!`)
 		    .setDescription(`Are you looking for the command list? [Click here](https://davidjoacaro.github.io/doughnut/help/)`)
-		    .setColor("RANDOM")
-        .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
+		    .setColor("#ffda8f")
+        .setFooter(`A new website is coming soon!`);
     message.channel.send(hembed);
 };
 
