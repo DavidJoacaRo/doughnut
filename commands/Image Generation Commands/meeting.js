@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
       try {
 				const meembed = new Discord.MessageEmbed()
 				    .setTitle(`${message.author.username} called a meeting`)
-				    .setColor('RANDOM')
+				    .setColor('RED')
 				    .setImage(`https://vacefron.nl/api/emergencymeeting?text=${finalresult}`)
 				    .setFooter(`Invoked by ${message.author.username}, provided by vacefron.nl`, message.author.avatarURL());
 				message.channel.send(meembed);
