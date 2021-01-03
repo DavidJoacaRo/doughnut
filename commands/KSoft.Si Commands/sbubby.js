@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
     var embedtitle = await detailsjson.title;
     const redditembed = new Discord.MessageEmbed()
         .setTitle(embedtitle)
-		    .setColor("RANDOM")
+		    .setColor("GREEN")
         .setURL(detailsjson.source)
         .addFields(
           {name: 'Publisher', value: detailsjson.author, inline: true}
