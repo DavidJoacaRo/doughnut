@@ -4,7 +4,7 @@ const { embedcolor } = require('../../config.json');
 module.exports.run = (client, message, args) =>{
         if (!message.guild) return;
         let serverembed = new Discord.MessageEmbed()
-        .setTitle(`Information about ${message.guild.name}:`)
+        .setTitle(`Informations about ${message.guild.name}:`)
         .setColor(embedcolor)
         .setThumbnail(message.guild.iconURL)
         .addField("Created at", message.guild.createdAt)
