@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const Canvas = require('canvas');
-//
 
 module.exports.run = async (client, message, args) => {
 		try {
