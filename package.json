@@ -17,7 +17,7 @@
     "canvacord": "^5.0.8",
     "captcha-canvas": "^2.2.2",
     "discord-leveling": "^1.1.0",
-    "discord-music-system": "^3.2.1",
+    "discord-music-system": "^3.2.3",
     "discord.js": "^12.4.1",
     "discord_auto_prefix": "^1.4.4",
     "discordjs-prompter": "^2.0.4",
