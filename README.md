@@ -2,6 +2,8 @@
 An open-source multi-purpose Discord Bot.
 
 `This repo is no longer getting updates, a new version of Doughnut will be soon available`
+[New Repo Here](https://github.com/DavidJoacaRo/doughnutV2)
+
 
 
 #### Requirements
