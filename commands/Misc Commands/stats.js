@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
 			{ name: 'Total guilds', value: client.guilds.cache.size, inline: true },
 			{ name: 'Total users', value: client.users.cache.size, inline: true },
 			{ name: 'Prefix', value: 'dn!', inline: true },
-			{ name: 'Main page', value: '[Click here](https://davidjoacaro.github.io/doughnut/)' }
+			{ name: 'Main page', value: '[Click here](https://sites.google.com/view/doughnut-bot/home)' }
 		)
     message.channel.send(hembed);
 };

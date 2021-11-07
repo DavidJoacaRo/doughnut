@@ -1,12 +1,12 @@
 {
 	"botname": "Doughnut",
 	"gitlink": "https://github.com/DavidJoacaRo/doughnut",
-	"supportserver": "https://discord.gg/dTMYdtN",
+	"supportserver": "",
 	"botinvite": "",
-	"donatelink": "none",
-	"creator": "DavidJoacaRo",
+	"donatelink": "",
+	"creator": "David.#7643",
 	"prefix": "dn!",
 	"creatorUserID": "320985090022965258",
 	"contributors": [ "lambdaguy101" ],
-	"est_version": "1.3.4"
+	"est_version": "1.3.5"
 }

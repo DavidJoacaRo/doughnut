@@ -1,8 +1,8 @@
 module.exports.run = async (client, message, args) => {
     try {
-			message.author.send('Support server: `discord.gg/dTMYdtN`');
+			message.author.send('Currently no support server. Contact the dev instead `David.#7643`');
 		} catch (err) {
-			message.channel.send('Support server: `discord.gg/dTMYdtN`');
+			message.channel.send('Currently no support server. Contact the dev instead `David.#7643`');
 		}
 };
 

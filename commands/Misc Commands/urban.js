@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args) => {
 		const [answer] = list;
 
 		const embed = new Discord.MessageEmbed()
-			.setColor('BLUE')
+			.setColor('#134FE6')
 			.setTitle(answer.word)
 			.setURL(answer.permalink)
 			.setFooter(`Invoked by ${message.author.username}, powered by api.urbandictionary.com`, message.author.avatarURL())
@@ -26,7 +26,7 @@ module.exports.run = async (client, message, args) => {
 			.addFields(
 				{ name: 'Definition', value: answer.definition },
 				{ name: 'Example', value: answer.example },
-				{ name: 'Rating', value: `${answer.thumbs_up} thumbs up. ${answer.thumbs_down} thumbs down.` }
+				{ name: 'Rating', value: `${answer.thumbs_up} 👍 ${answer.thumbs_down} 👎` }
 			);
 
 		message.channel.send(embed);

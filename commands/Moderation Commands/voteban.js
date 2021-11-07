@@ -3,6 +3,8 @@ const Prompter = require('discordjs-prompter');
 const { prefix } = require('../../config.json');
 
 module.exports.run = async (client, message, args) => {
+
+	message.channle.send("Command disabled due to bugs.")
  /*   const votedperson = message.mentions.users.first();
 	if (message.member.permissions.has('BAN_MEMBERS')) {
 	if (votedperson == message.author) {

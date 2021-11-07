@@ -46,7 +46,7 @@ client.on("ready", () => {
 		console.log("------------------------------------")
 		console.log("")
 		console.log("              SUCCESS!")
-    console.log("");
+        console.log("");
 		console.log("           Bot is online!")
 		console.log("")
 		console.log("------------------------------------")
