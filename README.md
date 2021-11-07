@@ -1,6 +1,10 @@
 # Doughnut Bot [![Discord Server](https://img.shields.io/discord/745311967950143558?color=%237289DA)](https://discord.gg/dTMYdtN) [![Open Issues](https://img.shields.io/github/issues/DavidJoacaRo/doughnut)](https://github.com/DavidJoacaRo/doughnut/issues) [![Closed Issues](https://img.shields.io/github/issues-closed/DavidJoacaRo/doughnut)](https://github.com/DavidJoacaRo/doughnut/issues?q=is%3Aissue+is%3Aclosed) [![License](https://img.shields.io/github/license/DavidJoacaRo/doughnut)](https://github.com/DavidJoacaRo/doughnut/blob/master/LICENSE) [![Contributors](https://img.shields.io/github/contributors/DavidJoacaRo/doughnut)](https://github.com/DavidJoacaRo/doughnut/graphs/contributors) [![Commit](https://img.shields.io/github/last-commit/DavidJoacaRo/doughnut)](https://github.com/DavidJoacaRo/doughnut/graphs/commit-activity)
 An open-source multi-purpose Discord Bot.
 
+`This repo is no longer getting updates. I won't make bots anymore`
+
+
+
 
 #### Requirements
 - [Node.js](https://nodejs.org/en/) (latest version)
