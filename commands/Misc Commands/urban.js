@@ -16,7 +16,6 @@ module.exports.run = async (client, message, args) => {
 		return message.channel.send(`No results found for **${args.join(' ')}**.`);
 	} else {
 		const [answer] = list;
-
 		const embed = new Discord.MessageEmbed()
 			.setColor('#134FE6')
 			.setTitle(answer.word)

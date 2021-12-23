@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
 		const hugembed = new Discord.MessageEmbed()
         .setTitle(`${message.author.username} hugged ${user.username}`)
         .setImage(link)
-			  .setColor('MAGENTA')
+		.setColor('MAGENTA')
         .setFooter(`Invoked by ${message.author.username}`, message.author.avatarURL());
     message.channel.send(hugembed);
 };

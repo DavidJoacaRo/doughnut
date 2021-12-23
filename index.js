@@ -6,6 +6,7 @@ const fs = require("fs");
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 
+//Cheers to lambdaguy from his JuiceBot repo for helping me create this bot
 
 /**
 try {
@@ -101,6 +102,8 @@ setInterval(() => {
         { type: 'PLAYING', name: `Rocket League | ${prefix}help`},
         { type: 'PLAYING', name: `Genshin Impact | ${prefix}help`},
         { type: 'WATCHING', name: `for pull requests | ${prefix}help`},
+        { type: 'WATCHING', name: `Discord ruining their platform | ${prefix}help`},
+        { type: 'WATCHING', name: `KSoft.Si fixing their mf dashboard | ${prefix}help`},
          //I couldn't resist the urge.
         // Does this last one work? I've commented it out as a safe feature.
         // { type: 'PLAYING', name: `the Matrix | /help'}
